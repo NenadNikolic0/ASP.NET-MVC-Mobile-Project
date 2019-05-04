@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.875" name="DB">
+  <DataContextMoniker Name="/DBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="613507ef-b207-4e98-82b0-468e0d73c1b4" absoluteBounds="0.75, 7.25, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DBDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3a842e5-d325-4227-aabb-23a9619656b4" absoluteBounds="0.765, 7.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ae88bec9-360f-4089-a601-1a581d1fb74c" absoluteBounds="3.5, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBDataContext/CustomerRequestForService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10c64781-3be1-403f-a95c-e4c4b1dfed54" absoluteBounds="3.515, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f7f5a396-885c-4b81-8f26-b6f5493c44c7" absoluteBounds="0.75, 4.375, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DBDataContext/ServiceType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7dd1f4d8-82b6-45be-a3b2-511414e989ec" absoluteBounds="0.765, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c0621ed-f47f-4ff3-bd7d-4e4f9bb4ee58" absoluteBounds="0.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBDataContext/Vendor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f072c144-475e-4b00-bb88-c951e792675a" absoluteBounds="0.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0333a58-de43-4932-a145-8ad2d899c198" absoluteBounds="3.5, 4.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBDataContext/VendorService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e137acf0-7403-460c-bb64-067f77de0724" absoluteBounds="3.515, 4.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="135d6aa3-2786-4bfe-8f01-324f3f32b5c9" absoluteBounds="6.25, 2.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DBDataContext/VendorServiceOfferForRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72962005-6a0f-4639-8021-a0d03272883a" absoluteBounds="6.265, 2.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 7.25153746153846); (3.125 : 6.87653746153846); (3.125 : 2.11620198567708); (3.5 : 2.11620198567708)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/Customer/Customer_CustomerRequestForService" />
+      <nodes>
+        <classShapeMoniker Id="613507ef-b207-4e98-82b0-468e0d73c1b4" />
+        <classShapeMoniker Id="ae88bec9-360f-4089-a601-1a581d1fb74c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.4368490375601); (3.06607443490112 : 4.12077460265897 : JumpStart); (3.24642556509888 : 3.94042347246122 : JumpEnd); (3.3125 : 3.8743490375601); (3.3125 : 2.83055497851562); (3.5 : 2.83055497851562)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/ServiceType/ServiceType_CustomerRequestForService" />
+      <nodes>
+        <classShapeMoniker Id="f7f5a396-885c-4b81-8f26-b6f5493c44c7" />
+        <classShapeMoniker Id="ae88bec9-360f-4089-a601-1a581d1fb74c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.1303239914363); (3.04166666666667 : 5.1303239914363 : JumpStart); (3.27083333333333 : 5.1303239914363 : JumpEnd); (3.5 : 5.1303239914363)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/ServiceType/ServiceType_VendorService" />
+      <nodes>
+        <classShapeMoniker Id="f7f5a396-885c-4b81-8f26-b6f5493c44c7" />
+        <classShapeMoniker Id="f0333a58-de43-4932-a145-8ad2d899c198" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.4208645098157); (3.06607443490112 : 3.73693894471683 : JumpStart); (3.18392556509888 : 3.85479007491458 : JumpEnd); (3.1875 : 3.8583645098157); (3.1875 : 5.57321168452023); (3.5 : 5.57321168452023)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/Vendor/Vendor_VendorService" />
+      <nodes>
+        <classShapeMoniker Id="0c0621ed-f47f-4ff3-bd7d-4e4f9bb4ee58" />
+        <classShapeMoniker Id="f0333a58-de43-4932-a145-8ad2d899c198" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.92870198567708); (6.25 : 2.92870198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/CustomerRequestForService/CustomerRequestForService_VendorServiceOfferForRequest" />
+      <nodes>
+        <classShapeMoniker Id="ae88bec9-360f-4089-a601-1a581d1fb74c" />
+        <classShapeMoniker Id="135d6aa3-2786-4bfe-8f01-324f3f32b5c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.16429768880208); (7.25 : 5.16429768880208); (7.25 : 4.3381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/VendorService/VendorService_VendorServiceOfferForRequest" />
+      <nodes>
+        <classShapeMoniker Id="f0333a58-de43-4932-a145-8ad2d899c198" />
+        <classShapeMoniker Id="135d6aa3-2786-4bfe-8f01-324f3f32b5c9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

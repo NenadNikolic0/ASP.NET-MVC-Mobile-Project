@@ -1,0 +1,113 @@
+﻿body {
+    
+}
+
+.h1Iwanna {
+    font-family:Forte; 
+    font-size:30pt;
+}
+
+#login-validation {
+    color:red;
+}
+
+#SetTimeValidation {
+    color:red;
+} 
+
+center {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.footerLabel {
+    font-size:10pt!important;
+    color:white;
+}
+
+.noBold {
+    font-weight:100!important;
+}
+
+.fc-event-title {
+    font-weight:100!important;
+}
+
+.fc-event-time {
+    font-weight:100!important;
+}
+
+#login-validation-vendor {
+    color:red;
+}
+
+.popup-header {
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#Set_Distance_Button {
+    margin-top:100px;
+}
+
+.current_requests {
+    margin-top:50px;
+}
+
+#current_requests_vendor {
+    margin-top:50px;
+}
+
+.vendoractiverequests {
+    border-bottom:1px solid #8cc63f;
+    margin-top:5px!important;
+    padding-bottom:5px;
+    color: #8cc63f;
+    cursor:pointer;
+    font-weight: bold;
+    
+}
+
+.h2Iwanna {
+    font-family:Forte; 
+    font-size:20pt;
+    text-align:center;
+}
+
+.h3Iwanna { 
+    font-size:15pt;
+    text-align:center;
+}
+
+.customer_request_border {
+    border-bottom:2px solid #8cc63f;
+}
+
+#vendors_offer_description {
+    width:80%;
+    height:150px!important;
+}
+
+#vendoroffervalidate{
+    color:red;
+}
+
+.vendoractiveoffers {
+    border-bottom:1px solid #8cc63f;
+    margin-top:5px!important;
+    padding-bottom:5px;
+    color: #8cc63f;
+    cursor:pointer;
+    font-weight: bold;
+    
+}
+
+.Accepted_requests_vendor {
+    border-bottom:1px solid #8cc63f;
+    margin-top:5px!important;
+    padding-bottom:5px;
+    color: #8cc63f;
+    cursor:pointer;
+    font-weight: bold;
+}

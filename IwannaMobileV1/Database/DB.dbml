@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Iwanna" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NNIKOLIC\SQLEXPRESS;Initial Catalog=Iwanna;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="IwannaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Association Name="Customer_CustomerRequestForService" Member="CustomerRequestForServices" ThisKey="ID" OtherKey="CustomerID" Type="CustomerRequestForService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerRequestForService" Member="CustomerRequestForServices">
+    <Type Name="CustomerRequestForService">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Latitude" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="VendorIDAccepted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="distance" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CustomerRequestForService_VendorServiceOfferForRequest" Member="VendorServiceOfferForRequests" ThisKey="ID" OtherKey="CustomerRequestID" Type="VendorServiceOfferForRequest" />
+      <Association Name="Customer_CustomerRequestForService" Member="Customer" ThisKey="CustomerID" OtherKey="ID" Type="Customer" IsForeignKey="true" />
+      <Association Name="ServiceType_CustomerRequestForService" Member="ServiceType" ThisKey="ServiceTypeID" OtherKey="ID" Type="ServiceType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceType" Member="ServiceTypes">
+    <Type Name="ServiceType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="ServiceType_CustomerRequestForService" Member="CustomerRequestForServices" ThisKey="ID" OtherKey="ServiceTypeID" Type="CustomerRequestForService" />
+      <Association Name="ServiceType_VendorService" Member="VendorServices" ThisKey="ID" OtherKey="ServiceTypeID" Type="VendorService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vendor" Member="Vendors">
+    <Type Name="Vendor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactPhone" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactEmail" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="Latitude" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Association Name="Vendor_VendorService" Member="VendorServices" ThisKey="ID" OtherKey="VendorID" Type="VendorService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VendorService" Member="VendorServices">
+    <Type Name="VendorService">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="VendorService_VendorServiceOfferForRequest" Member="VendorServiceOfferForRequests" ThisKey="ID" OtherKey="VendorServiceID" Type="VendorServiceOfferForRequest" />
+      <Association Name="ServiceType_VendorService" Member="ServiceType" ThisKey="ServiceTypeID" OtherKey="ID" Type="ServiceType" IsForeignKey="true" />
+      <Association Name="Vendor_VendorService" Member="Vendor" ThisKey="VendorID" OtherKey="ID" Type="Vendor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VendorServiceOfferForRequest" Member="VendorServiceOfferForRequests">
+    <Type Name="VendorServiceOfferForRequest">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="VendorServiceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerRequestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="DateTime" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Association Name="CustomerRequestForService_VendorServiceOfferForRequest" Member="CustomerRequestForService" ThisKey="CustomerRequestID" OtherKey="ID" Type="CustomerRequestForService" IsForeignKey="true" />
+      <Association Name="VendorService_VendorServiceOfferForRequest" Member="VendorService" ThisKey="VendorServiceID" OtherKey="ID" Type="VendorService" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
